@@ -1,0 +1,114 @@
+body {
+    background-color: rgb(28, 28, 28);
+}
+label {
+    font-size: 30px;
+    padding-right: 20px;
+    color: white;
+}
+input {
+    font-size: 20px;
+}
+button {
+    font-size: 20px;
+    background-color: rgb(243, 146, 162);
+    border-radius: 11px;
+    padding: 10px 20px;
+    border: none;
+}
+.timer {
+    font-size: 200px;
+    text-align: center;
+    color: white;
+}
+.input-container {
+    margin: 20px;
+}
+.align-inputs {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    text-align: center;
+}
+.btn-dureza {
+    text-align: center;
+    margin: 20px;
+    font-size: 50px;
+}
+.btn-cancelar-pausar {
+    text-align: center;
+    margin-top: 45px;
+    justify-content: space-between;
+}
+.btn-cancelar {
+    background-color: rgba(241, 227, 216, 0.877);
+    color: rgb(28, 28, 28);
+    font-size: 15px;
+    padding: 7px 13px;
+    display: none;
+    cursor: pointer;
+}
+
+
+#alert-cancelar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.confirmarCancelamento {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 320px;
+    width: 90%;
+}
+.confirmarCancelamento p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333333;
+}
+.confirmarBtn {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.confirmarBtn button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.confirmarBtn button:hover {
+    opacity: 0.85;
+}
+#btn-sim {
+    background-color: #ff4d4d;
+    color: white;
+}
+#btn-nao {
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+
+.btn-pausar {
+    background-color: rgba(241, 227, 216, 0.877);
+    color: rgb(28, 28, 28);
+    font-size: 15px;
+    padding: 7px 13px;
+    display: none;
+    cursor: pointer;
+}
