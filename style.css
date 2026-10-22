@@ -103,7 +103,6 @@ button {
     color: #333333;
 }
 
-
 .btn-pausar {
     background-color: rgba(241, 227, 216, 0.877);
     color: rgb(28, 28, 28);
@@ -112,3 +111,13 @@ button {
     display: none;
     cursor: pointer;
 }
+
+
+@media (max-width: 600px) {
+    body {
+        background-color: #e0e0e0;
+    }
+}
+
+
+
