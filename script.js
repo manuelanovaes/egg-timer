@@ -6,11 +6,15 @@ const btnCancelar = document.getElementById('btn-cancelar');
 const confirmarCancelar = document.getElementById('alert-cancelar')
 const btnSim = document.getElementById('btn-sim');
 const btnNao = document.getElementById('btn-nao');
+const btnNovoOvo = document.getElementById('novo-ovo');
 
 const botoes =  [btnMole, btnMedia, btnDura];
 let interval;
 let estaPausado = false;
 let tempoRestante = 0;
+
+btnNovoOvo.disabled = true;
+btnNovoOvo.style.opacity = '1';
 
 btnCancelar.addEventListener('click', () => {
     confirmarCancelar.style.display = 'flex';
@@ -48,7 +52,7 @@ const atualizarDisplay = (display) => {
 
 btnMole.addEventListener('click', () => {
     const display = document.getElementById('timer');
-    timer(4 * 60, display);
+    timer(.1 * 60, display);
 });
 btnMedia.addEventListener('click', () => {
     const display = document.getElementById('timer');
@@ -111,8 +115,11 @@ const timer = (duration, display) => {
     
     for (let i = 0; i < botoes.length; i++) {
         botoes[i].disabled = true;
-        botoes[i].style.opacity = '0.5';
+        botoes[i].style.opacity = '0';
     }
+    btnNovoOvo.disabled = true;
+    btnNovoOvo.style.opacity = '0';
+
     btnPausar.style.display = 'inline-block';
     btnCancelar.style.display = 'inline-block';
 
@@ -126,13 +133,61 @@ const timer = (duration, display) => {
             display.innerHTML = 'Ovo pronto!';
             clearInterval(interval);
 
-            for (let i = 0; i < botoes.length; i++) {
-                botoes[i].disabled = false;
-                botoes[i].style.opacity = '1'; 
-            }
             btnPausar.style.display = 'none';
             btnCancelar.style.display  = 'none';
+
+            btnNovoOvo.disabled = false;
+            btnNovoOvo.style.opacity = '1';
+
+            btnNovoOvo.addEventListener('click', () => {
+                for (let i = 0; i < botoes.length; i++) {
+                    botoes[i].disabled = false;
+                    botoes[i].style.opacity = '1'; 
+
+                    btnNovoOvo.disabled = true;
+                    btnNovoOvo.style.opacity = '0';
+                }
+            });
         }
         
     }, 1000);
 };
+
+
+
+
+
+
+
+
+// CÓDIGO PRA SE EU QUISER IMPLEMENTAR A POSSIBILIDADE DO USUARIO QUERER ESCOLHER UM TEMPO ESPECIFICO PRO TIMER
+/* const btnStart = document.getElementById('btn-start'); */
+/* btnStart.addEventListener('click', () => {
+    const minuteInput = document.getElementById('minute');
+    const secondInput = document.getElementById('second');
+    
+    let rawMinute = parseInt(minuteInput.value) || 0;
+    let rawSecond = parseInt(secondInput.value) || 0;
+
+    let totalSecond = (rawMinute * 60) + rawSecond;
+
+    let calculatedMinute = Math.floor(totalSecond / 60);
+    let calculatedSecond = totalSecond % 60;
+
+    if (calculatedMinute > 60) {
+        calculatedMinute = 60;
+        calculatedSecond = 0;
+        totalSecond = 60 * 60;
+    }
+
+    else if (calculatedMinute === 60) {
+        calculatedSecond = 0;
+        totalSecond = 60 * 60;
+    }
+
+    minuteInput.value = calculatedMinute;
+    secondInput.value = calculatedSecond;
+
+    const display = document.getElementById('timer');
+    timer(totalSecond, display);
+}) */

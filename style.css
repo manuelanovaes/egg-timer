@@ -1,46 +1,75 @@
 body {
     background-color: rgb(28, 28, 28);
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
 }
+
 label {
     font-size: 30px;
     padding-right: 20px;
     color: white;
 }
+
 input {
     font-size: 20px;
 }
+
 button {
     font-size: 20px;
     background-color: rgb(243, 146, 162);
     border-radius: 11px;
     padding: 10px 20px;
     border: none;
+    cursor: pointer;
 }
+
 .timer {
-    font-size: 200px;
     text-align: center;
     color: white;
+    font-size: clamp(40px, 15vw, 100px);
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
+
 .input-container {
     margin: 20px;
 }
+
 .align-inputs {
     display: flex;
     justify-content: center;
 }
+
 .btn {
     text-align: center;
 }
-.btn-dureza {
+
+.btnDureza {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin: 20px;
+    margin: 20px auto;
     font-size: 50px;
+    width: 100%;
 }
-.btn-cancelar-pausar {
+
+.btnDureza button {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.btnCancelarPausar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
     text-align: center;
     margin-top: 45px;
-    justify-content: space-between;
 }
+
 .btn-cancelar {
     background-color: rgba(241, 227, 216, 0.877);
     color: rgb(28, 28, 28);
@@ -50,6 +79,21 @@ button {
     cursor: pointer;
 }
 
+.btn-pausar {
+    background-color: rgba(241, 227, 216, 0.877);
+    color: rgb(28, 28, 28);
+    font-size: 15px;
+    padding: 7px 13px;
+    display: none;
+    cursor: pointer;
+}
+
+.novoOvo {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #alert-cancelar {
     display: none;
@@ -63,6 +107,7 @@ button {
     align-items: center;
     z-index: 1000;
 }
+
 .confirmarCancelamento {
     background-color: #ffffff;
     padding: 24px;
@@ -72,16 +117,19 @@ button {
     max-width: 320px;
     width: 90%;
 }
+
 .confirmarCancelamento p {
     margin-bottom: 20px;
     font-size: 16px;
     color: #333333;
 }
+
 .confirmarBtn {
     display: flex;
     justify-content: center;
     gap: 12px;
 }
+
 .confirmarBtn button {
     padding: 8px 16px;
     border: none;
@@ -94,47 +142,25 @@ button {
 .confirmarBtn button:hover {
     opacity: 0.85;
 }
+
 #btn-sim {
     background-color: #ff4d4d;
     color: white;
 }
+
 #btn-nao {
     background-color: #e0e0e0;
     color: #333333;
 }
 
 
-.btn-pausar {
-    background-color: rgba(241, 227, 216, 0.877);
-    color: rgb(28, 28, 28);
-    font-size: 15px;
-    padding: 7px 13px;
-    display: none;
-    cursor: pointer;
-}
-
-
 @media (max-width: 600px) {
-    body {
-        background-color: #e0e0e0;
+    .btnDureza button {
+        width: 80%; 
     }
-    .timer {
-        font-size: 10rem;
-    }
-    .btn-dureza {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .btn-dureza button {
-        width: 80%;
-        margin-bottom: 10px;
-    }
+
     .confirmarCancelamento {
         width: 90%;
         padding: 20px;
     }
 }
-
-
-
