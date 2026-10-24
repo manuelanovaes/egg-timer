@@ -103,6 +103,7 @@ button {
     color: #333333;
 }
 
+
 .btn-pausar {
     background-color: rgba(241, 227, 216, 0.877);
     color: rgb(28, 28, 28);
@@ -116,6 +117,22 @@ button {
 @media (max-width: 600px) {
     body {
         background-color: #e0e0e0;
+    }
+    .timer {
+        font-size: 10rem;
+    }
+    .btn-dureza {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .btn-dureza button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .confirmarCancelamento {
+        width: 90%;
+        padding: 20px;
     }
 }
 
