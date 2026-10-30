@@ -14,7 +14,7 @@ let estaPausado = false;
 let tempoRestante = 0;
 
 btnNovoOvo.disabled = true;
-btnNovoOvo.style.opacity = '1';
+btnNovoOvo.style.opacity = '0';
 
 btnCancelar.addEventListener('click', () => {
     confirmarCancelar.style.display = 'flex';
